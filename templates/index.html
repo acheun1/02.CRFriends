@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment: C + R Friends 2018 10 08 Cheung A</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="well">
+                    <h2>These are my friends!</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Occupation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in range(loopcnt): %}
+                            <tr>
+                                <td>
+                                    {{friends[i]['name_first']}}
+                                </td>
+                                <td>
+                                    {{friends[i]['name_last']}}
+                                </td>
+                                <td>
+                                    {{friends[i]['occupation']}}
+                                </td>
+                            </tr>
+                        {% endfor %}            
+                    </table>
+                    <form action="/update_records" method='post'>
+                        <hr class="mb-4">
+                        <h4>Add A Friend</h4>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>First Name:</td>
+                                    <td>
+                                        <input type="text" name="q1" placeholder="First Name">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Last Name:</td>
+                                    <td>
+                                        <input type="text" name="q2" placeholder="Last Name">
+                                    </td>
+                                </tr>   
+                                <tr>
+                                    <td>Occupation:</td>
+                                    <td>
+                                        <input type="text" name="q3" placeholder="Occupation">
+                                    </td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Submitted</button>
+                    </form>                
+                </div>                        
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</body>
+</html>
+
+
